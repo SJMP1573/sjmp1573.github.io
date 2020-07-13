@@ -152,6 +152,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-基于-node-js-搭建-Hexo-静态博客-保姆级" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/13/%E5%9F%BA%E4%BA%8E-node-js-%E6%90%AD%E5%BB%BA-Hexo-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-%E4%BF%9D%E5%A7%86%E7%BA%A7/">基于 node.js 搭建 Hexo 静态博客--保姆级</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/13/%E5%9F%BA%E4%BA%8E-node-js-%E6%90%AD%E5%BB%BA-Hexo-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-%E4%BF%9D%E5%A7%86%E7%BA%A7/" class="archive-article-date">
+  	<time datetime="2020-07-13T14:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@[TOC](基于 node.js 搭建 Hexo 静态博客) </p>
+<h1 id="一、安装-node-js"><a href="#一、安装-node-js" class="headerlink" title="一、安装 node.js"></a>一、安装 node.js</h1><hr>
+<p><strong><a href="https://www.bilibili.com/video/BV1Yb411a7ty" target="_blank" rel="noopener">点击我查看本文对应视频：https://www.bilibili.com/video/BV1Yb411a7ty</a></strong><br><strong>申明：本文参考CodeSheep视频，如有问题，请评论留言交流。</strong><br><strong>本文讲解以win10系统为基础，CodeSheep视频讲解以Mac系统为基础。</strong></p>
+<hr>
+<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言—-百度百科</p>
+<p>安装步骤如下： </p>
+<h2 id="1-点击我进入-node-js-官网下载页面"><a href="#1-点击我进入-node-js-官网下载页面" class="headerlink" title="1. 点击我进入 node.js 官网下载页面"></a>1. <a href="https://nodejs.org/en/" target="_blank" rel="noopener">点击我进入 node.js 官网下载页面</a></h2><p> <img src="https://img-blog.csdnimg.cn/20200712202018412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="2-点击下载好的-exe-文件安装即可"><a href="#2-点击下载好的-exe-文件安装即可" class="headerlink" title="2. 点击下载好的 .exe 文件安装即可"></a>2. 点击下载好的 .exe 文件安装即可</h2><p>一直点 next，记录安装的位置。<br><img src="https://img-blog.csdnimg.cn/20200712202603119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"> </p>
+<h2 id="3-以管理员身份打开命令提示符验证是否安装成功"><a href="#3-以管理员身份打开命令提示符验证是否安装成功" class="headerlink" title="3. 以管理员身份打开命令提示符验证是否安装成功"></a>3. 以管理员身份打开命令提示符验证是否安装成功</h2><pre><code>键入命令：`node -v` 可查看安装 node.js 的版本号
+键入命令：`npm -v` 可查看安装包管理器的版本号</code></pre><p><img src="https://img-blog.csdnimg.cn/20200712203233795.png#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="二、安装-Hexo-框架"><a href="#二、安装-Hexo-框架" class="headerlink" title="二、安装 Hexo 框架"></a>二、安装 Hexo 框架</h1><p>安装步骤如下：</p>
+<h2 id="1-安装cnpm"><a href="#1-安装cnpm" class="headerlink" title="1. 安装cnpm"></a>1. 安装cnpm</h2><p>由于国内镜像源安装 <strong>npm</strong> 速度太慢，所以我们安装淘宝 镜像源的cnpm。<br>在命令行中键入指令：</p>
+<p><code>powershell
+npm install -g cnpm --registry=http://registry.npm.taobao.org</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200712204819328.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="2-验证-cnpm-是否安装成功，键入指令-cnpm-v-，可查看版本号即安装成功。"><a href="#2-验证-cnpm-是否安装成功，键入指令-cnpm-v-，可查看版本号即安装成功。" class="headerlink" title="2. 验证 cnpm 是否安装成功，键入指令 cnpm -v ，可查看版本号即安装成功。"></a>2. 验证 cnpm 是否安装成功，键入指令 <code>cnpm -v</code> ，可查看版本号即安装成功。</h2><p><img src="https://img-blog.csdnimg.cn/2020071220475218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="3-利用-cnpm-采用全局模式安装-Hexo"><a href="#3-利用-cnpm-采用全局模式安装-Hexo" class="headerlink" title="3. 利用 cnpm 采用全局模式安装 Hexo"></a>3. 利用 cnpm 采用全局模式安装 Hexo</h2><p>键入命令：<code>cnpm install -g hexo-cli</code> </p>
+<p><img src="https://img-blog.csdnimg.cn/2020071220560684.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="4-验证-Hexo-是否安装成功"><a href="#4-验证-Hexo-是否安装成功" class="headerlink" title="4.验证 Hexo 是否安装成功"></a>4.验证 Hexo 是否安装成功</h2><p>键入指令：<code>hexo -v</code><br><img src="https://img-blog.csdnimg.cn/20200712205832311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="4-创建一个-blog-目录用于存放博客内容，安装中出了问题，可直接将整个-blog-目录删除掉。"><a href="#4-创建一个-blog-目录用于存放博客内容，安装中出了问题，可直接将整个-blog-目录删除掉。" class="headerlink" title="4.创建一个 blog 目录用于存放博客内容，安装中出了问题，可直接将整个 blog 目录删除掉。"></a>4.创建一个 blog 目录用于存放博客内容，安装中出了问题，可直接将整个 blog 目录删除掉。</h2><p>我选择在 E:/Switch/Hexo 目录下创建 blog 目录。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712210317926.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="5-创建完成之后在命令行中进入blog目录"><a href="#5-创建完成之后在命令行中进入blog目录" class="headerlink" title="5.创建完成之后在命令行中进入blog目录"></a>5.创建完成之后在命令行中进入blog目录</h2><p>注意：这里仍是以管理员身份。<br>键入<code>E:\Switch\Hexo\blog</code> 按回车<br>再键入<code>E:</code>按回车即可<br><img src="https://img-blog.csdnimg.cn/20200712210512215.png" alt="在这里插入图片描述"></p>
+<h1 id="三、初始化-Hexo"><a href="#三、初始化-Hexo" class="headerlink" title="三、初始化 Hexo"></a>三、初始化 Hexo</h1><h2 id="1-在-blog-目录下，在命令行中键入指令-hexo-init-尝试对Hexo进行初始化"><a href="#1-在-blog-目录下，在命令行中键入指令-hexo-init-尝试对Hexo进行初始化" class="headerlink" title="1.在 blog 目录下，在命令行中键入指令 hexo init 尝试对Hexo进行初始化"></a>1.在 blog 目录下，在命令行中键入指令 <code>hexo init</code> 尝试对Hexo进行初始化</h2><p><img src="https://img-blog.csdnimg.cn/20200712211054707.png#pic_center" alt="在这里插入图片描述">它告诉我们 ‘git’ 不是内部或外部指令，也不是可运行的程序或批处理文件。<br>于是我们需要安装 Git 来解决这个问题。</p>
+<h2 id="2-安装-Git"><a href="#2-安装-Git" class="headerlink" title="2. 安装 Git"></a>2. 安装 Git</h2><p><a href="https://www.jianshu.com/p/414ccd423efc" target="_blank" rel="noopener">点我查看安装教程</a></p>
+<p><strong>方式一</strong>：进入电脑管家进行安装<br><img src="https://img-blog.csdnimg.cn/20200712211552835.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><strong>方式二</strong>：进入官网进行下载安装</p>
+<p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">点我进入Git官网下载</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200712211411944.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="3-在-blog-目录下，重新以管理员身份进入命令行，并键入指令-hexo-init-对Hexo进行初始化"><a href="#3-在-blog-目录下，重新以管理员身份进入命令行，并键入指令-hexo-init-对Hexo进行初始化" class="headerlink" title="3.在 blog 目录下，重新以管理员身份进入命令行，并键入指令 hexo init 对Hexo进行初始化"></a>3.在 blog 目录下，重新以管理员身份进入命令行，并键入指令 <code>hexo init</code> 对Hexo进行初始化</h2><p><strong>注意：如果你搭了梯子，请把梯子暂时关掉，再初始化，不然会报错。</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200712212418887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>看到界面最后提示 <strong>Start blogging with Hexo！</strong>，即证明初始化成功!</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712213014417.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="4-查看-blog-目录下生成的文件"><a href="#4-查看-blog-目录下生成的文件" class="headerlink" title="4.查看 blog 目录下生成的文件"></a>4.查看 blog 目录下生成的文件</h2><p>方式一：键入指令： <code>dir</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200712213323688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>方式二：直接进入 blog 目录查看<br><img src="https://img-blog.csdnimg.cn/20200712213434699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="5-启动博客"><a href="#5-启动博客" class="headerlink" title="5.启动博客"></a>5.启动博客</h2><p>键入指令：<code>hexo -s</code>，得到IP地址： <strong><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></strong><br><img src="https://img-blog.csdnimg.cn/20200712213559652.png" alt="在这里插入图片描述">打开浏览器访问 <strong><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></strong> ,可看到我们搭建的博客成功了！</p>
+<p><img src="https://img-blog.csdnimg.cn/2020071221381277.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="四、创建一篇博文"><a href="#四、创建一篇博文" class="headerlink" title="四、创建一篇博文"></a>四、创建一篇博文</h1><h2 id="1-断开-hexo-连接"><a href="#1-断开-hexo-连接" class="headerlink" title="1. 断开 hexo 连接"></a>1. 断开 hexo 连接</h2><p>按下 Ctrl+3，再输入Y按回车即可断开连接。<br><img src="https://img-blog.csdnimg.cn/2020071221412393.png" alt="在这里插入图片描述"></p>
+<h2 id="2-在-blog-路径下键入指令：hexo-n-quot-我的第一篇博文-quot"><a href="#2-在-blog-路径下键入指令：hexo-n-quot-我的第一篇博文-quot" class="headerlink" title="2.在 blog 路径下键入指令：hexo n &quot;我的第一篇博文&quot;"></a>2.在 blog 路径下键入指令：<code>hexo n &quot;我的第一篇博文&quot;</code></h2><p><img src="https://img-blog.csdnimg.cn/20200712214315488.png#pic_center" alt="在这里插入图片描述">进入blog目录查看是否生成 <strong>我的第一篇博文.md</strong>。<br><img src="https://img-blog.csdnimg.cn/20200712214515553.png" alt="在这里插入图片描述"></p>
+<h2 id="3-下载-VScode，以编辑博文"><a href="#3-下载-VScode，以编辑博文" class="headerlink" title="3.下载 VScode，以编辑博文"></a>3.下载 VScode，以编辑博文</h2><p><a href="https://blog.csdn.net/x15011238662/article/details/85094006" target="_blank" rel="noopener">点我查看安装教程</a></p>
+<p>方式一：腾讯管家下载<br><img src="https://img-blog.csdnimg.cn/20200712215252929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>方式二：官网下载</p>
+<h2 id="4-在-VScode-中安装插件-markdown-preview-enhanced以预览编辑效果"><a href="#4-在-VScode-中安装插件-markdown-preview-enhanced以预览编辑效果" class="headerlink" title="4.在 VScode 中安装插件 markdown-preview-enhanced以预览编辑效果"></a>4.在 VScode 中安装插件 <code>markdown-preview-enhanced</code>以预览编辑效果</h2><p>打开VScode,点击Extension按钮，搜索<code>markdown-preview-enhanced</code>安装即可<br><img src="https://img-blog.csdnimg.cn/20200712215638525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="5-用-VScode-编辑-我的第一篇博文-md"><a href="#5-用-VScode-编辑-我的第一篇博文-md" class="headerlink" title="5.用 VScode 编辑 我的第一篇博文.md"></a>5.用 VScode 编辑 我的第一篇博文.md</h2><p><img src="https://img-blog.csdnimg.cn/20200712215902781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>打开预览窗口，开始编辑，保存后退出。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712215919940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="6-将刚才编辑的博文添加到网页中"><a href="#6-将刚才编辑的博文添加到网页中" class="headerlink" title="6.将刚才编辑的博文添加到网页中"></a>6.将刚才编辑的博文添加到网页中</h2><p>在 blog 目录下，键入命令：<code>hexo clean</code>，按下回车<br>再键入命令：<code>hexo s</code>，按下回车开始<br><img src="https://img-blog.csdnimg.cn/20200712220405214.png#pic_center" alt="在这里插入图片描述"><br>看到如下页面表示成功了！</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712220514864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="7-打开网页进入-http-localhost-400-验证"><a href="#7-打开网页进入-http-localhost-400-验证" class="headerlink" title="7.打开网页进入 http://localhost:400 验证"></a>7.打开网页进入 <a href="http://localhost:400" target="_blank" rel="noopener">http://localhost:400</a> 验证</h2><p><img src="https://img-blog.csdnimg.cn/20200712220813933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>关闭连接：在命令提示符按下 Ctrl+3 ，再输入Y，按回车<br><img src="https://img-blog.csdnimg.cn/20200712221120153.png#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="五、将-blog-部署到-GitHub-上去"><a href="#五、将-blog-部署到-GitHub-上去" class="headerlink" title="五、将 blog 部署到 GitHub 上去"></a>五、将 blog 部署到 GitHub 上去</h1><h2 id="1-在-GitHub-上创建一个-repository"><a href="#1-在-GitHub-上创建一个-repository" class="headerlink" title="1.在 GitHub 上创建一个 repository"></a>1.在 GitHub 上创建一个 repository</h2><p> 登录 GitHub ，创建一个仓库 repository，并给它去一个域名，我的是sjmp1573.github.io。参考这个格式改就好了，其他参见下图，最后点击Create repository。<br> <img src="https://img-blog.csdnimg.cn/20200712221152677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="2-安装-git-部署的插件"><a href="#2-安装-git-部署的插件" class="headerlink" title="2.安装 git 部署的插件"></a>2.安装 git 部署的插件</h2><p>在blog目录下进入命令提示符<br>键入命令:<code>cnpm install --save hexo-deployer-git</code><br><img src="https://img-blog.csdnimg.cn/20200712221744861.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="3-安装完成之后修改配置信息"><a href="#3-安装完成之后修改配置信息" class="headerlink" title="3.安装完成之后修改配置信息"></a>3.安装完成之后修改配置信息</h2><p>修改 blog 目录下的_config.yml ，用记事本打开将域名换程你自己的域名并完善下列信息即可，保存后退出。<br>注意：冒号后面的空格不能省略。</p>
+<p><code>type: &#39;git&#39;</code>  </p>
+<p><code>repo: &#39;https://github.com/SJMP1573/sjmp1573.github.io.git&#39;</code></p>
+<p><code>branch: &#39;master&#39;</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200712222243853.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="4-键入指令，将本地信息部署到-GitHub-上"><a href="#4-键入指令，将本地信息部署到-GitHub-上" class="headerlink" title="4.键入指令，将本地信息部署到 GitHub 上"></a>4.键入指令，将本地信息部署到 GitHub 上</h2><p>在命令行中，键入指令：<code>hexo d</code><br><img src="https://img-blog.csdnimg.cn/20200712223031659.png#pic_center" alt="在这里插入图片描述"></p>
+<p>弹出下列窗口，登录你的GitHub账号即可。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712223149771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>当提示你在命令行输入用户名时，键入你GitHub用户名，按回车，再键入密码回车即可。<br>看到途中最后一行表明部署成功。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712223334729.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="5-我们打开我们-GitHub-可以看到代码仓库包含了许多文件。"><a href="#5-我们打开我们-GitHub-可以看到代码仓库包含了许多文件。" class="headerlink" title="5.我们打开我们 GitHub 可以看到代码仓库包含了许多文件。"></a>5.我们打开我们 GitHub 可以看到代码仓库包含了许多文件。</h2><p><img src="https://img-blog.csdnimg.cn/20200712223541941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="6-打开浏览器输入域名对我们的blog进行访问"><a href="#6-打开浏览器输入域名对我们的blog进行访问" class="headerlink" title="6.打开浏览器输入域名对我们的blog进行访问"></a>6.打开浏览器输入域名对我们的blog进行访问</h2><p><img src="https://img-blog.csdnimg.cn/20200712223708752.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>我们的博客就搭建成功啦!</p>
+<h1 id="六、更换我们的-blog-主题"><a href="#六、更换我们的-blog-主题" class="headerlink" title="六、更换我们的 blog 主题"></a>六、更换我们的 blog 主题</h1><h2 id="1-下载主题样式"><a href="#1-下载主题样式" class="headerlink" title="1.下载主题样式"></a>1.下载主题样式</h2><p><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">点击我下载一种主题样式  https://github.com/litten/hexo-theme-yilia</a></p>
+<p>我们点击下载下载压缩包到 blog 目录下的 thems 文件夹中。<br><img src="https://img-blog.csdnimg.cn/20200712224509371.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>解压，文件名改为yilia，里面包含了主题样式的文件，大家注意检查一下。<br><img src="https://img-blog.csdnimg.cn/20200712224704120.png#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200712224827394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="2-更改配置文件中的主题样式"><a href="#2-更改配置文件中的主题样式" class="headerlink" title="2.更改配置文件中的主题样式"></a>2.更改配置文件中的主题样式</h2><p>用记事本打开_config.yml 文件，更改主题为yilia，保存后退出。<br><img src="https://img-blog.csdnimg.cn/20200712225121833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="3-本地更改主题样式"><a href="#3-本地更改主题样式" class="headerlink" title="3.本地更改主题样式"></a>3.本地更改主题样式</h2><p>在命令行中键入指令：<code>hexo clean</code> 清除一下<br>再键入指令：<code>hexo s</code> 开始<br><img src="https://img-blog.csdnimg.cn/20200712225433398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>打开浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 验证静态网页主题是否已经更改。<br><img src="https://img-blog.csdnimg.cn/2020071222555329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>退出连接：Ctrl+3 按回车，再输入Y按回车<br><img src="https://img-blog.csdnimg.cn/20200712225938535.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="4-将更改主题的静态网页部署到-GitHub"><a href="#4-将更改主题的静态网页部署到-GitHub" class="headerlink" title="4. 将更改主题的静态网页部署到 GitHub"></a>4. 将更改主题的静态网页部署到 GitHub</h2><p>键入指令：<code>hexo d</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200712225842210.png#pic_center" alt="在这里插入图片描述"><br>显示下图时，表示部署成功！</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712225915782.png#pic_center" alt="在这里插入图片描述"><br>在浏览器输入我们的域名即可访问我们的博客！</p>
+<p><img src="https://img-blog.csdnimg.cn/20200712230038283.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><strong>祝贺你拥有了自己博客！</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/13/%E5%9F%BA%E4%BA%8E-node-js-%E6%90%AD%E5%BB%BA-Hexo-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-%E4%BF%9D%E5%A7%86%E7%BA%A7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
