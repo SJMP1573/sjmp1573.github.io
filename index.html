@@ -152,6 +152,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-利用-IDEA-工具创建-Maven-项目时，针对依赖无法自动下载问题的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-07-23T11:07:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1. 环境配置"></a>1. 环境配置</h1><p>Maven:</p>
+<p>如果没有安装 Maven ，请先安装 Maven 。<br><a href="https://blog.csdn.net/qq_36188127/article/details/107500020" target="_blank" rel="noopener">点我查看 Maven 安装教程</a>：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\<span class="number">10511</span>&gt;java <span class="literal">-version</span></span><br><span class="line">java version <span class="string">"1.8.0_211"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_211<span class="literal">-b12</span>)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span><span class="literal">-Bit</span> Server VM (build <span class="number">25.211</span><span class="literal">-b12</span>, mixed mode)</span><br></pre></td></tr></table></figure>
+
+<p>Java:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\<span class="number">10511</span>&gt;java <span class="literal">-version</span></span><br><span class="line">java version <span class="string">"1.8.0_211"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_211<span class="literal">-b12</span>)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span><span class="literal">-Bit</span> Server VM (build <span class="number">25.211</span><span class="literal">-b12</span>, mixed mode)</span><br></pre></td></tr></table></figure>
+
+<p>IDEA:  <code>2017.3.5</code></p>
+<h1 id="2-配置-Maven-xml-文档"><a href="#2-配置-Maven-xml-文档" class="headerlink" title="2. 配置 Maven.xml 文档"></a>2. 配置 Maven.xml 文档</h1><p>打开 Maven 安装目录下的 conf 文件，打开 setting.xml 文件。我的是在（D:\Program Files\apache-maven-3.3.9\conf）目录下。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200722232242291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>你可能遇到没有权限打开这个文档的问题。<br>解决办法：修改文件安全权限，详见下图<br><img src="https://img-blog.csdnimg.cn/20200722232720181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+<ol>
+<li>匹配 jdk1.8 ，将下段代码添加到 setttings.xml 文件的<profiles>…</profiles>中。</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;jdk-1.8&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">	&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">	&lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">	&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">	&lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">	&lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">&lt;/profile&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><img src="https://img-blog.csdnimg.cn/20200722232928781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol start="2">
+<li>添加本地仓库<br><img src="https://img-blog.csdnimg.cn/20200722233428870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<p>3.添加镜像提高下载依赖的速度</p>
+<p>因为防火墙的问题，IDEA 在自动下载 Maven 依赖会被墙，所以我们采用 aliyun 镜像的方式来解决这个问题。具体遇到问题情况如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">正在 Ping www.baidu.com [<span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span>] 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">42</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">42</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">64</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">47</span>ms TTL=<span class="number">53</span></span><br><span class="line"></span><br><span class="line"><span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">4</span>，已接收 = <span class="number">4</span>，丢失 = <span class="number">0</span> (<span class="number">0</span>% 丢失)，</span><br><span class="line">往返行程的估计时间(以毫秒为单位):</span><br><span class="line">    最短 = <span class="number">42</span>ms，最长 = <span class="number">64</span>ms，平均 = <span class="number">48</span>ms</span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping https:<span class="comment">//start.spring.io</span></span><br><span class="line">Ping 请求找不到主机 https:<span class="comment">//start.spring.io。请检查该名称，然后重试。</span></span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping http:<span class="comment">//start.spring.io</span></span><br><span class="line">Ping 请求找不到主机 http:<span class="comment">//start.spring.io。请检查该名称，然后重试。</span></span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping start.spring.io</span><br><span class="line"></span><br><span class="line">正在 Ping start.spring.io [<span class="number">104.20</span><span class="number">.5</span><span class="number">.247</span>] 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line"></span><br><span class="line"><span class="number">104.20</span><span class="number">.5</span><span class="number">.247</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">4</span>，已接收 = <span class="number">0</span>，丢失 = <span class="number">4</span> (<span class="number">100</span>% 丢失)，</span><br></pre></td></tr></table></figure>
+<p>我们能连接 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> ，但不能访问 start.spring.io 。这样我们在 IDEA 中就无法自动下在 Maven 依赖。<br>解决办法如下：<br>在 Maven 安装目录下 conf 文件中配置 settings。具体为在<mirros>…</mirros>目录下添加下列代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &lt;mirror&gt;</span><br><span class="line">&lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">&lt;name&gt;aliyun maven&lt;/name&gt;</span><br><span class="line">&lt;url&gt;http:<span class="comment">//maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span></span><br><span class="line">&lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line"> &lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200722233614204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="3-在-IDEA-中配置-Maven"><a href="#3-在-IDEA-中配置-Maven" class="headerlink" title="3. 在 IDEA 中配置 Maven"></a>3. 在 IDEA 中配置 Maven</h1><ol>
+<li>打开 IDEA，点击 File ，再点击 Settings 进行 Maven 配置。<br><img src="https://img-blog.csdnimg.cn/20200723182552714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>如图找到 Maven 选项 ，参考下图进行配置。<br><img src="https://img-blog.csdnimg.cn/20200723183046462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">3. 然后再进入 Maven 选项下的 importing ，确保<code>Import Maven projects automatically</code>选项是勾选的，点击 ok，退出 Maven 设置。<br><img src="https://img-blog.csdnimg.cn/20200723183806412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h1 id="4-创建-Maven-项目"><a href="#4-创建-Maven-项目" class="headerlink" title="4.创建 Maven 项目"></a>4.创建 Maven 项目</h1>依次点击 File ，new ，Project…<br><img src="https://img-blog.csdnimg.cn/20200723184159657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>参照图创建一个 Maven 工程。<br><img src="https://img-blog.csdnimg.cn/20200723184333625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">根据自己情况填写 GroupId 和 ArtifactId<br>GroupId:<code>com.sjmp1573</code><br>ArtifactId:<code>spring-boot-02</code><br>然后点击 next<br><img src="https://img-blog.csdnimg.cn/20200723184527164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>接着点击 Finish<br><img src="https://img-blog.csdnimg.cn/20200723184900839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这样就创建了一个 Maven 工程，它会弹出来一个<code>Maven projects need to be imported</code>对话框，点击<code>Enable Auto-lmport</code>即可。</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200723184929407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">当我们在 pom.xml 文件中，填写下列依赖时,我们发现它爆红，没有自动下载依赖。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.5</span><span class="number">.9</span>.RELEASE&lt;<span class="regexp">/version&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">        &lt;artifactId&gt;spring-boot-starter-web&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;<span class="regexp">/dependency&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://img-blog.csdnimg.cn/20200723185223148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>为解决这个问题，我们再去检查一下配置。</p>
+<p><img src="https://img-blog.csdnimg.cn/2020072318592234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们修改完成之后，发现 IDEA 自动下载了依赖。<br><img src="https://img-blog.csdnimg.cn/20200723190157759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200723190241842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>至此，问题已解决。解决的核心是配置阿里云镜像，解决防火墙限制的问题。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Maven-的安装教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
