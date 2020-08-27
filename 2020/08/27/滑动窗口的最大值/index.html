@@ -6,37 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法 | Hexo</title>
+  <title>滑动窗口的最大值 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 环境配置Maven: 如果没有安装 Maven ，请先安装 Maven 。点我查看 Maven 安装教程： 1234C:\Users\10511&gt;java -versionjava version &quot;1.8.0_211&quot;Java(TM) SE Runtime Environment (build 1.8.0_211-b12)Java HotSpot(TM) 64-Bit Server">
+  <meta name="description" content="来源：力扣（LeetCode）链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;hua-dong-chuang-kou-de-zui-da-zhi-lcof 题目描述： 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。 示例： 输入: nums &#x3D; [1,3,-1,-3,5,3,6,7], 和 k &#x3D; 3 输出: [3,3,5,5,6,7]  解释">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法">
-<meta property="og:url" content="http://yoursite.com/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="滑动窗口的最大值">
+<meta property="og:url" content="http://yoursite.com/2020/08/27/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 环境配置Maven: 如果没有安装 Maven ，请先安装 Maven 。点我查看 Maven 安装教程： 1234C:\Users\10511&gt;java -versionjava version &quot;1.8.0_211&quot;Java(TM) SE Runtime Environment (build 1.8.0_211-b12)Java HotSpot(TM) 64-Bit Server">
+<meta property="og:description" content="来源：力扣（LeetCode）链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;hua-dong-chuang-kou-de-zui-da-zhi-lcof 题目描述： 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。 示例： 输入: nums &#x3D; [1,3,-1,-3,5,3,6,7], 和 k &#x3D; 3 输出: [3,3,5,5,6,7]  解释">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722232242291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722232720181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722232928781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722233428870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722233614204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723182552714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723183046462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723183806412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184159657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184333625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184527164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184900839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184929407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723185223148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020072318592234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723190157759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723190241842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-07-23T11:07:33.000Z">
-<meta property="article:modified_time" content="2020-07-23T11:10:16.069Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827164554438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-08-27T14:02:09.000Z">
+<meta property="article:modified_time" content="2020-08-27T14:09:38.893Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200722232242291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200827164554438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -172,69 +156,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-利用-IDEA-工具创建-Maven-项目时，针对依赖无法自动下载问题的解决方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-滑动窗口的最大值" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法
+      滑动窗口的最大值
     </h1>
   
 
         
-        <a href="/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-07-23T11:07:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+        <a href="/2020/08/27/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" class="archive-article-date">
+  	<time datetime="2020-08-27T14:02:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1. 环境配置"></a>1. 环境配置</h1><p>Maven:</p>
-<p>如果没有安装 Maven ，请先安装 Maven 。<br><a href="https://blog.csdn.net/qq_36188127/article/details/107500020" target="_blank" rel="noopener">点我查看 Maven 安装教程</a>：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\<span class="number">10511</span>&gt;java <span class="literal">-version</span></span><br><span class="line">java version <span class="string">"1.8.0_211"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_211<span class="literal">-b12</span>)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span><span class="literal">-Bit</span> Server VM (build <span class="number">25.211</span><span class="literal">-b12</span>, mixed mode)</span><br></pre></td></tr></table></figure>
+        <p><a href="https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/" target="_blank" rel="noopener">来源：力扣（LeetCode）<br>链接：https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof</a></p>
+<p><strong>题目描述：</strong></p>
+<p>给定一个数组 <code>nums</code> 和滑动窗口的大小 <code>k</code>，请找出所有滑动窗口里的最大值。</p>
+<p><strong>示例：</strong></p>
+<pre><code>输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
+输出: [3,3,5,5,6,7] 
+解释: 
 
-<p>Java:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\<span class="number">10511</span>&gt;java <span class="literal">-version</span></span><br><span class="line">java version <span class="string">"1.8.0_211"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_211<span class="literal">-b12</span>)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span><span class="literal">-Bit</span> Server VM (build <span class="number">25.211</span><span class="literal">-b12</span>, mixed mode)</span><br></pre></td></tr></table></figure>
-
-<p>IDEA:  <code>2017.3.5</code></p>
-<h1 id="2-配置-Maven-xml-文档"><a href="#2-配置-Maven-xml-文档" class="headerlink" title="2. 配置 Maven.xml 文档"></a>2. 配置 Maven.xml 文档</h1><p>打开 Maven 安装目录下的 conf 文件，打开 setting.xml 文件。我的是在（D:\Program Files\apache-maven-3.3.9\conf）目录下。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200722232242291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+滑动窗口的位置                最大值
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+1 [3  -1  -3] 5  3  6  7       3
+1  3 [-1  -3  5] 3  6  7       5
+1  3  -1 [-3  5  3] 6  7       5
+1  3  -1  -3 [5  3  6] 7       6
+1  3  -1  -3  5 [3  6  7]      7</code></pre><p><strong>提示：</strong></p>
+<p>你可以假设<code>k</code>总是有效的，在输入数组不为空的情况下，1 ≤ <code>k</code> ≤ 输入数组的大小。</p>
+<p><strong>画图分析：</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20200827164554438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">  * 滑动窗口，</span></span><br><span class="line"><span class="comment">  * Time O(2n) ,n 为 nums 的长度</span></span><br><span class="line"><span class="comment">  * Space O(k),k 窗口大小</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] maxSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="comment">// 如果输入的数组为 null 或者 长度为 0，或者 k 的值为 0，那么返回一个长度为 0 的数组</span></span><br><span class="line">        <span class="keyword">if</span>(nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span> || k == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="comment">// 滑动窗口对应的数据结构为双端队列</span></span><br><span class="line">        Deque&lt;Integer&gt; deque = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="comment">// 创建一个大小为 n = nums.length - k + 1 的数组，作为结果返回</span></span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length - k + <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 当未形成窗口时，主要是对队列对象操作，使得队首元素最大。这就要求滑动的次数为 k 次</span></span><br><span class="line">        <span class="comment">// 1. 当队列为空 2.本次循环的 nums[i] ，可能是最大的，也可能是第二大，第三大，这就要求与队尾的元素进行比较，若大于队尾的元素，就将队尾的元素移除 3.nums[i] 也可能是最小的。</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123; <span class="comment">// 未形成窗口</span></span><br><span class="line">            <span class="keyword">while</span>(!deque.isEmpty() &amp;&amp; deque.peekLast() &lt; nums[i]) deque.removeLast();</span><br><span class="line">                <span class="comment">//将此元素添加至队列。</span></span><br><span class="line">            deque.addLast(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//至此，大小为 k 的窗口已形成，可将队首元素，添加到结果数组中。</span></span><br><span class="line">        res[<span class="number">0</span>] = deque.peekFirst();</span><br><span class="line">        <span class="comment">//形成窗口之后，i 开始于 k，终止条件为 &lt; nums.length</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = k; i &lt; nums.length; i++) &#123; <span class="comment">// 形成窗口后</span></span><br><span class="line">            <span class="comment">// 如果滑动窗口要删除的那个元素（即窗口的左边界）等于当前队列中最大元素（即队首），意味着队首元素也要随着窗口的滑动而被删除。</span></span><br><span class="line">            <span class="keyword">if</span>(deque.peekFirst() == nums[i - k]) deque.removeFirst();</span><br><span class="line">            <span class="comment">// 队列不为空（防止空指针异常），并且队列的最后一个元素比 nums[i] 小，移除，保证单调</span></span><br><span class="line">            <span class="keyword">while</span>(!deque.isEmpty() &amp;&amp; deque.peekLast() &lt; nums[i]) deque.removeLast();</span><br><span class="line">            deque.addLast(nums[i]);</span><br><span class="line">            res[i - k + <span class="number">1</span>] = deque.peekFirst();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>基础知识：</strong></p>
+<p><a href="https://www.runoob.com/java/java-interfaces.html" target="_blank" rel="noopener">Java接口参考链接</a></p>
+<p><strong>Java 接口</strong><br>接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以 interface 来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。<br>接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。类描述对象的属性和方法。接口则包含类要实现的方法。<br>除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。<br>接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。<br><strong>接口与类相似点：</strong></p>
 <ul>
-<li>你可能遇到没有权限打开这个文档的问题。<br>解决办法：修改文件安全权限，详见下图<br><img src="https://img-blog.csdnimg.cn/20200722232720181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>一个接口可以有多个方法。</li>
+<li>接口文件保存在.java 结尾的文件中，文件名使用接口名。</li>
+<li>接口的字节码文件保存在.class 结尾的文件中。</li>
+<li>接口相应的字节码文件必须在与包名称相匹配的目录接口中 。</li>
 </ul>
-<ol>
-<li>匹配 jdk1.8 ，将下段代码添加到 setttings.xml 文件的<profiles>…</profiles>中。</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;jdk-1.8&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">	&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">	&lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">	&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">	&lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">	&lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">&lt;/profile&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p><img src="https://img-blog.csdnimg.cn/20200722232928781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ol start="2">
-<li>添加本地仓库<br><img src="https://img-blog.csdnimg.cn/20200722233428870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-</ol>
-<p>3.添加镜像提高下载依赖的速度</p>
-<p>因为防火墙的问题，IDEA 在自动下载 Maven 依赖会被墙，所以我们采用 aliyun 镜像的方式来解决这个问题。具体遇到问题情况如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">正在 Ping www.baidu.com [<span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span>] 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">42</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">42</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">64</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">47</span>ms TTL=<span class="number">53</span></span><br><span class="line"></span><br><span class="line"><span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">4</span>，已接收 = <span class="number">4</span>，丢失 = <span class="number">0</span> (<span class="number">0</span>% 丢失)，</span><br><span class="line">往返行程的估计时间(以毫秒为单位):</span><br><span class="line">    最短 = <span class="number">42</span>ms，最长 = <span class="number">64</span>ms，平均 = <span class="number">48</span>ms</span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping https:<span class="comment">//start.spring.io</span></span><br><span class="line">Ping 请求找不到主机 https:<span class="comment">//start.spring.io。请检查该名称，然后重试。</span></span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping http:<span class="comment">//start.spring.io</span></span><br><span class="line">Ping 请求找不到主机 http:<span class="comment">//start.spring.io。请检查该名称，然后重试。</span></span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping start.spring.io</span><br><span class="line"></span><br><span class="line">正在 Ping start.spring.io [<span class="number">104.20</span><span class="number">.5</span><span class="number">.247</span>] 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line"></span><br><span class="line"><span class="number">104.20</span><span class="number">.5</span><span class="number">.247</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">4</span>，已接收 = <span class="number">0</span>，丢失 = <span class="number">4</span> (<span class="number">100</span>% 丢失)，</span><br></pre></td></tr></table></figure>
-<p>我们能连接 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> ，但不能访问 start.spring.io 。这样我们在 IDEA 中就无法自动下在 Maven 依赖。<br>解决办法如下：<br>在 Maven 安装目录下 conf 文件中配置 settings。具体为在<mirros>…</mirros>目录下添加下列代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &lt;mirror&gt;</span><br><span class="line">&lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">&lt;name&gt;aliyun maven&lt;/name&gt;</span><br><span class="line">&lt;url&gt;http:<span class="comment">//maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span></span><br><span class="line">&lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line"> &lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20200722233614204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="3-在-IDEA-中配置-Maven"><a href="#3-在-IDEA-中配置-Maven" class="headerlink" title="3. 在 IDEA 中配置 Maven"></a>3. 在 IDEA 中配置 Maven</h1><ol>
-<li>打开 IDEA，点击 File ，再点击 Settings 进行 Maven 配置。<br><img src="https://img-blog.csdnimg.cn/20200723182552714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>如图找到 Maven 选项 ，参考下图进行配置。<br><img src="https://img-blog.csdnimg.cn/20200723183046462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">3. 然后再进入 Maven 选项下的 importing ，确保<code>Import Maven projects automatically</code>选项是勾选的，点击 ok，退出 Maven 设置。<br><img src="https://img-blog.csdnimg.cn/20200723183806412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h1 id="4-创建-Maven-项目"><a href="#4-创建-Maven-项目" class="headerlink" title="4.创建 Maven 项目"></a>4.创建 Maven 项目</h1>依次点击 File ，new ，Project…<br><img src="https://img-blog.csdnimg.cn/20200723184159657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>参照图创建一个 Maven 工程。<br><img src="https://img-blog.csdnimg.cn/20200723184333625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">根据自己情况填写 GroupId 和 ArtifactId<br>GroupId:<code>com.sjmp1573</code><br>ArtifactId:<code>spring-boot-02</code><br>然后点击 next<br><img src="https://img-blog.csdnimg.cn/20200723184527164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>接着点击 Finish<br><img src="https://img-blog.csdnimg.cn/20200723184900839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这样就创建了一个 Maven 工程，它会弹出来一个<code>Maven projects need to be imported</code>对话框，点击<code>Enable Auto-lmport</code>即可。</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20200723184929407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">当我们在 pom.xml 文件中，填写下列依赖时,我们发现它爆红，没有自动下载依赖。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.5</span><span class="number">.9</span>.RELEASE&lt;<span class="regexp">/version&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">        &lt;artifactId&gt;spring-boot-starter-web&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;<span class="regexp">/dependency&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>dependencies&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://img-blog.csdnimg.cn/20200723185223148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>为解决这个问题，我们再去检查一下配置。</p>
-<p><img src="https://img-blog.csdnimg.cn/2020072318592234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们修改完成之后，发现 IDEA 自动下载了依赖。<br><img src="https://img-blog.csdnimg.cn/20200723190157759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200723190241842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>至此，问题已解决。解决的核心是配置阿里云镜像，解决防火墙限制的问题。</p>
+<p><strong>接口与类的区别：</strong></p>
+<ul>
+<li>接口不能用实例化对象。</li>
+<li>接口没有构造方法。</li>
+<li>接口中所有的方法必须是抽象方法。</li>
+<li>接口不能包含成员变量，除了 static 和 final 变量。</li>
+<li>接口不是被类继承了，而是被类实现。</li>
+<li>接口支持多继承。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Interface Queue&lt;E&gt;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">//实现类：<span class="title">LinkedList</span>,<span class="title">PriorityQueue</span>...</span></span><br></pre></td></tr></table></figure>
+<p><strong>Insert：</strong> add(e) offer(e)<br><strong>Remove：</strong> remove() poll()<br><strong>Examine：</strong> element() peek() </p>
+<p>队列通常但不一定是以FIFO（先进先出）方式排序元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Interface Deque &lt;E&gt;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Deque</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">//实现类：<span class="title">LinkedList</span>，...</span></span><br></pre></td></tr></table></figure>
+<p><strong>Insert：</strong> addFirst(e) offerFirst(e) addLast(e) offerLast(e)<br><strong>Remove：</strong> removeFirst() pollFirst() removeLast() pollLast()<br><strong>Examine：</strong> getFirst() peekFirst() getLast() peekLast() </p>
 
       
 
@@ -293,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/27/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +291,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/27/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/27/%E9%98%9F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          滑动窗口的最大值
+          队列的最大值
         
       </div>
     </a>
   
   
-    <a href="/2020/07/21/Maven-%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Maven 的安装教程</div>
+    <a href="/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
