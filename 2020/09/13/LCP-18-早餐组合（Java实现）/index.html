@@ -6,37 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法 | Hexo</title>
+  <title>LCP 18. 早餐组合（Java实现） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 环境配置Maven: 如果没有安装 Maven ，请先安装 Maven 。点我查看 Maven 安装教程：">
+  <meta name="description" content="题目描述： 小扣在秋日市集选择了一家早餐摊位，一维整型数组 staple 中记录了每种主食的价格，一维整型数组 drinks 中记录了每种饮料的价格。小扣的计划选择一份主食和一款饮料，且花费不超过 x 元。请返回小扣共有多少种购买方案。 注意：答案需要以 1e9 + 7 (1000000007) 为底取模，如：计算初始结果为：1000000008，请返回 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法">
-<meta property="og:url" content="http://yoursite.com/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="LCP 18. 早餐组合（Java实现）">
+<meta property="og:url" content="http://yoursite.com/2020/09/13/LCP-18-%E6%97%A9%E9%A4%90%E7%BB%84%E5%90%88%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 环境配置Maven: 如果没有安装 Maven ，请先安装 Maven 。点我查看 Maven 安装教程：">
+<meta property="og:description" content="题目描述： 小扣在秋日市集选择了一家早餐摊位，一维整型数组 staple 中记录了每种主食的价格，一维整型数组 drinks 中记录了每种饮料的价格。小扣的计划选择一份主食和一款饮料，且花费不超过 x 元。请返回小扣共有多少种购买方案。 注意：答案需要以 1e9 + 7 (1000000007) 为底取模，如：计算初始结果为：1000000008，请返回 1">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722232242291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722232720181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722232928781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722233428870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200722233614204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723182552714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723183046462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723183806412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184159657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184333625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184527164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184900839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723184929407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723185223148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020072318592234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723190157759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200723190241842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-07-23T11:07:33.000Z">
-<meta property="article:modified_time" content="2020-09-08T14:28:59.598Z">
+<meta property="article:published_time" content="2020-09-13T03:46:39.000Z">
+<meta property="article:modified_time" content="2020-09-13T03:47:43.669Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="数据结构与算法">
+<meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200722232242291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -172,72 +158,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-利用-IDEA-工具创建-Maven-项目时，针对依赖无法自动下载问题的解决方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LCP-18-早餐组合（Java实现）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      利用 IDEA 工具创建 Maven 项目时，针对依赖无法自动下载问题的解决方法
+      LCP 18. 早餐组合（Java实现）
     </h1>
   
 
         
-        <a href="/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-07-23T11:07:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+        <a href="/2020/09/13/LCP-18-%E6%97%A9%E9%A4%90%E7%BB%84%E5%90%88%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-09-13T03:46:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1. 环境配置"></a>1. 环境配置</h1><p>Maven:</p>
-<p>如果没有安装 Maven ，请先安装 Maven 。<br><a href="https://blog.csdn.net/qq_36188127/article/details/107500020" target="_blank" rel="noopener">点我查看 Maven 安装教程</a>：</p>
+        <p><strong>题目描述：</strong></p>
+<p>小扣在秋日市集选择了一家早餐摊位，一维整型数组 staple 中记录了每种主食的价格，一维整型数组 drinks 中记录了每种饮料的价格。小扣的计划选择一份主食和一款饮料，且花费不超过 x 元。请返回小扣共有多少种购买方案。</p>
+<p>注意：答案需要以 <code>1e9 + 7 (1000000007)</code> 为底取模，如：计算初始结果为：<code>1000000008</code>，请返回 1</p>
 <a id="more"></a>
+<p>示例 1：</p>
+<pre><code>输入：staple = [10,20,5], drinks = [5,5,2], x = 15
+
+输出：6
+
+解释：小扣有 6 种购买方案，所选主食与所选饮料在数组中对应的下标分别是：
+第 1 种方案：staple[0] + drinks[0] = 10 + 5 = 15；
+第 2 种方案：staple[0] + drinks[1] = 10 + 5 = 15；
+第 3 种方案：staple[0] + drinks[2] = 10 + 2 = 12；
+第 4 种方案：staple[2] + drinks[0] = 5 + 5 = 10；
+第 5 种方案：staple[2] + drinks[1] = 5 + 5 = 10；
+第 6 种方案：staple[2] + drinks[2] = 5 + 2 = 7。</code></pre><p>示例 2：</p>
+<pre><code>输入：staple = [2,1,1], drinks = [8,9,5,1], x = 9
+
+输出：8
+
+解释：小扣有 8 种购买方案，所选主食与所选饮料在数组中对应的下标分别是：
+第 1 种方案：staple[0] + drinks[2] = 2 + 5 = 7；
+第 2 种方案：staple[0] + drinks[3] = 2 + 1 = 3；
+第 3 种方案：staple[1] + drinks[0] = 1 + 8 = 9；
+第 4 种方案：staple[1] + drinks[2] = 1 + 5 = 6；
+第 5 种方案：staple[1] + drinks[3] = 1 + 1 = 2；
+第 6 种方案：staple[2] + drinks[0] = 1 + 8 = 9；
+第 7 种方案：staple[2] + drinks[2] = 1 + 5 = 6；
+第 8 种方案：staple[2] + drinks[3] = 1 + 1 = 2；</code></pre><p>提示：</p>
+<pre><code>1 &lt;= staple.length &lt;= 10^5
+1 &lt;= drinks.length &lt;= 10^5
+1 &lt;= staple[i],drinks[i] &lt;= 10^5
+1 &lt;= x &lt;= 2*10^5</code></pre><p><a href="https://leetcode-cn.com/problems/2vYnGI" target="_blank" rel="noopener">题目来源：力扣（LeetCode）<br>链接：https://leetcode-cn.com/problems/2vYnGI</a></p>
+<p><strong>解题思路：</strong></p>
+<p>将两个数组升序排序，从一个数组的 0 位开始遍历staple[i]，在 drinks 数组中找对应符合要求的元素，即小于或等于（x-staple[i]）的元素。在 drinks 数组中查找时，采用二分查找的变形（时间复杂度为 O(logn)）。</p>
+<p><strong>代码实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 若 staple.length = m,drinks.length = n. Time = O(mlogn)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">breakfastNumber</span><span class="params">(<span class="keyword">int</span>[] staple, <span class="keyword">int</span>[] drinks, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 这里采用了一个小技巧。使第一个数组为 max(staple,drinks),这样可以提高计算速度。</span></span><br><span class="line">        <span class="keyword">if</span>(staple.length &gt; drinks.length)&#123;</span><br><span class="line">            <span class="keyword">return</span> breakfastNumber(drinks,staple,x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//经过处理，代码走到这里，staple 的长度是小于 drinks 长度的。</span></span><br><span class="line">        <span class="comment">//使用二分查找的前提是，数的集合有序，故使用 Arrays 类的静态方法将两个数组排序。</span></span><br><span class="line">        Arrays.sort(staple);</span><br><span class="line">        Arrays.sort(drinks);</span><br><span class="line">		<span class="comment">// 定义一个整型变量，存放方案的数量。</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//  取出 staple[i]</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;staple.length;i++)&#123;</span><br><span class="line">            <span class="comment">// 标记 x - staple[i] ，这是我们要去 drinks 数组找的元素（此元素后面的不满足方案要求），用 tmpIdx 接收 binarySearch() 方法返回满足方案的最大下标。</span></span><br><span class="line">            <span class="keyword">int</span> tmpIdx =  binarySearch(drinks,x - staple[i]);</span><br><span class="line">            <span class="comment">// 方案累和器（包括0位置，故 +1），并取题设要求的 mod 。</span></span><br><span class="line">            count = (count + tmpIdx + <span class="number">1</span>)%<span class="number">1000000007</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//有序且含重复元素的数组 arr，查找最后一个 ≤ 给定值 num 的下标。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = arr.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(low &lt;= high)&#123;</span><br><span class="line">            <span class="comment">// 在计算机中，位运算快于除法运算。</span></span><br><span class="line">            <span class="keyword">int</span> mid = low + ((high-low)&gt;&gt;<span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 如果找到的值 ≤ value，则满足条件。</span></span><br><span class="line">            <span class="keyword">if</span>(arr[mid] &lt;= value)&#123;</span><br><span class="line">                <span class="comment">// 进一步判断，该元素是否是最后一个。</span></span><br><span class="line">                <span class="keyword">if</span>(mid == arr.length - <span class="number">1</span> || arr[mid+<span class="number">1</span>] &gt; value )&#123;</span><br><span class="line">                    <span class="keyword">return</span> mid;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="comment">//如果不是最后一个 ≤ 给定值的元素，则说明需要找的元素在它的左边，故将 low = mid+1;</span></span><br><span class="line">                    low = mid+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">// arr[mid] &gt; value</span></span><br><span class="line">                high = mid-<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\<span class="number">10511</span>&gt;java <span class="literal">-version</span></span><br><span class="line">java version <span class="string">"1.8.0_211"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_211<span class="literal">-b12</span>)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span><span class="literal">-Bit</span> Server VM (build <span class="number">25.211</span><span class="literal">-b12</span>, mixed mode)</span><br></pre></td></tr></table></figure>
-
-<p>Java:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\<span class="number">10511</span>&gt;java <span class="literal">-version</span></span><br><span class="line">java version <span class="string">"1.8.0_211"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_211<span class="literal">-b12</span>)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span><span class="literal">-Bit</span> Server VM (build <span class="number">25.211</span><span class="literal">-b12</span>, mixed mode)</span><br></pre></td></tr></table></figure>
-
-<p>IDEA:  <code>2017.3.5</code></p>
-<h1 id="2-配置-Maven-xml-文档"><a href="#2-配置-Maven-xml-文档" class="headerlink" title="2. 配置 Maven.xml 文档"></a>2. 配置 Maven.xml 文档</h1><p>打开 Maven 安装目录下的 conf 文件，打开 setting.xml 文件。我的是在（D:\Program Files\apache-maven-3.3.9\conf）目录下。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200722232242291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
-<li>你可能遇到没有权限打开这个文档的问题。<br>解决办法：修改文件安全权限，详见下图<br><img src="https://img-blog.csdnimg.cn/20200722232720181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-</ul>
-<ol>
-<li>匹配 jdk1.8 ，将下段代码添加到 setttings.xml 文件的<profiles>…</profiles>中。</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">  &lt;id&gt;jdk-1.8&lt;/id&gt;</span><br><span class="line">  &lt;activation&gt;</span><br><span class="line">	&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">	&lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;/activation&gt;</span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">	&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">	&lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">	&lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line">&lt;/profile&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p><img src="https://img-blog.csdnimg.cn/20200722232928781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ol start="2">
-<li>添加本地仓库<br><img src="https://img-blog.csdnimg.cn/20200722233428870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-</ol>
-<p>3.添加镜像提高下载依赖的速度</p>
-<p>因为防火墙的问题，IDEA 在自动下载 Maven 依赖会被墙，所以我们采用 aliyun 镜像的方式来解决这个问题。具体遇到问题情况如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">正在 Ping www.baidu.com [<span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span>] 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">42</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">42</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">64</span>ms TTL=<span class="number">53</span></span><br><span class="line">来自 <span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的回复: 字节=<span class="number">32</span> 时间=<span class="number">47</span>ms TTL=<span class="number">53</span></span><br><span class="line"></span><br><span class="line"><span class="number">182.61</span><span class="number">.200</span><span class="number">.6</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">4</span>，已接收 = <span class="number">4</span>，丢失 = <span class="number">0</span> (<span class="number">0</span>% 丢失)，</span><br><span class="line">往返行程的估计时间(以毫秒为单位):</span><br><span class="line">    最短 = <span class="number">42</span>ms，最长 = <span class="number">64</span>ms，平均 = <span class="number">48</span>ms</span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping https:<span class="comment">//start.spring.io</span></span><br><span class="line">Ping 请求找不到主机 https:<span class="comment">//start.spring.io。请检查该名称，然后重试。</span></span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping http:<span class="comment">//start.spring.io</span></span><br><span class="line">Ping 请求找不到主机 http:<span class="comment">//start.spring.io。请检查该名称，然后重试。</span></span><br><span class="line"></span><br><span class="line">C:\Users\<span class="number">10511</span>&gt;ping start.spring.io</span><br><span class="line"></span><br><span class="line">正在 Ping start.spring.io [<span class="number">104.20</span><span class="number">.5</span><span class="number">.247</span>] 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line"></span><br><span class="line"><span class="number">104.20</span><span class="number">.5</span><span class="number">.247</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">4</span>，已接收 = <span class="number">0</span>，丢失 = <span class="number">4</span> (<span class="number">100</span>% 丢失)，</span><br></pre></td></tr></table></figure>
-<p>我们能连接 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> ，但不能访问 start.spring.io 。这样我们在 IDEA 中就无法自动下在 Maven 依赖。<br>解决办法如下：<br>在 Maven 安装目录下 conf 文件中配置 settings。具体为在<mirros>…</mirros>目录下添加下列代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &lt;mirror&gt;</span><br><span class="line">&lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">&lt;name&gt;aliyun maven&lt;/name&gt;</span><br><span class="line">&lt;url&gt;http:<span class="comment">//maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span></span><br><span class="line">&lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line"> &lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20200722233614204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="3-在-IDEA-中配置-Maven"><a href="#3-在-IDEA-中配置-Maven" class="headerlink" title="3. 在 IDEA 中配置 Maven"></a>3. 在 IDEA 中配置 Maven</h1><ol>
-<li>打开 IDEA，点击 File ，再点击 Settings 进行 Maven 配置。<br><img src="https://img-blog.csdnimg.cn/20200723182552714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>如图找到 Maven 选项 ，参考下图进行配置。<br><img src="https://img-blog.csdnimg.cn/20200723183046462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">3. 然后再进入 Maven 选项下的 importing ，确保<code>Import Maven projects automatically</code>选项是勾选的，点击 ok，退出 Maven 设置。<br><img src="https://img-blog.csdnimg.cn/20200723183806412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h1 id="4-创建-Maven-项目"><a href="#4-创建-Maven-项目" class="headerlink" title="4.创建 Maven 项目"></a>4.创建 Maven 项目</h1>依次点击 File ，new ，Project…<br><img src="https://img-blog.csdnimg.cn/20200723184159657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>参照图创建一个 Maven 工程。<br><img src="https://img-blog.csdnimg.cn/20200723184333625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">根据自己情况填写 GroupId 和 ArtifactId<br>GroupId:<code>com.sjmp1573</code><br>ArtifactId:<code>spring-boot-02</code><br>然后点击 next<br><img src="https://img-blog.csdnimg.cn/20200723184527164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>接着点击 Finish<br><img src="https://img-blog.csdnimg.cn/20200723184900839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这样就创建了一个 Maven 工程，它会弹出来一个<code>Maven projects need to be imported</code>对话框，点击<code>Enable Auto-lmport</code>即可。</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20200723184929407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">当我们在 pom.xml 文件中，填写下列依赖时,我们发现它爆红，没有自动下载依赖。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">1.5</span><span class="number">.9</span>.RELEASE&lt;<span class="regexp">/version&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">        &lt;artifactId&gt;spring-boot-starter-web&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;<span class="regexp">/dependency&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>dependencies&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://img-blog.csdnimg.cn/20200723185223148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>为解决这个问题，我们再去检查一下配置。</p>
-<p><img src="https://img-blog.csdnimg.cn/2020072318592234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们修改完成之后，发现 IDEA 自动下载了依赖。<br><img src="https://img-blog.csdnimg.cn/20200723190157759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200723190241842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>至此，问题已解决。解决的核心是配置阿里云镜像，解决防火墙限制的问题。</p>
+<p><a href="https://blog.csdn.net/qq_36188127/article/details/108558718" target="_blank" rel="noopener">关于二分法查找及其变形（Java 实现）建议参考此链接深入学习<br>https://blog.csdn.net/qq_36188127/article/details/108558718</a></p>
 
       
 
@@ -246,6 +226,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -296,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/%E5%88%A9%E7%94%A8-IDEA-%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA-Maven-%E9%A1%B9%E7%9B%AE%E6%97%B6%EF%BC%8C%E9%92%88%E5%AF%B9%E4%BE%9D%E8%B5%96%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/13/LCP-18-%E6%97%A9%E9%A4%90%E7%BB%84%E5%90%88%EF%BC%88Java%E5%AE%9E%E7%8E%B0%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -310,18 +313,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/27/%E5%89%91%E6%8C%87%20Offer%2059%20-%20I%20%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指 Offer 59 - I 滑动窗口的最大值
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/21/Maven-%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Maven 的安装教程</div>
+    <a href="/2020/09/13/%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE%E5%8F%8A%E5%85%B6%E5%8F%98%E5%BD%A2%EF%BC%88Java-%E5%AE%9E%E7%8E%B0%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二分法查找及其变形（Java 实现）</div>
       <i class="icon-circle-right"></i>
     </a>
   
